@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="Hanzo-KJNodes" width="880"></p>
+
 # Hanzo-KJNodes
 
 **Core utilities for the Hanzo ecosystem**
