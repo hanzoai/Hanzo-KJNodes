@@ -1,0 +1,12 @@
+# ComfyUI custom-node pack — installed by copying into custom_nodes/, never
+# built and never containerised, so the artifact is the source itself.
+#
+# Gate: every Python file in the pack compiles. That is the whole of what can be
+# asserted off-host — importing a node module pulls torch and a live ComfyUI
+# process — and it is a real one: a syntax error, a stray merge marker or a
+# broken f-string fails here instead of at load time inside a user's ComfyUI.
+test:
+  - name: compile
+    run: |
+      set -euo pipefail
+      python3 -m compileall -q -x '(^|/)(web_version|ComfyUI-Easy-Use-Frontend|\.git)/' .
